@@ -1,34 +1,37 @@
 import org.junit.Test;
+import org.junit.Before;
 import static org.junit.Assert.*;
 
 public class NodeTest {
   private int value;
   private Node currentNode;
-  private Node nextNode;
+
+  @Before
+  public void setup() {
+    value = 10;
+    currentNode = new Node(value);
+  }
 
   @Test
   public void testNodeClass_canBeInstantiated() {
-    currentNode = new Node(10);
     assertNotNull(currentNode);
   }
 
   @Test
   public void testGetValue_retrievesCorrectValue() {
-    currentNode = new Node(10);
-    int value = currentNode.getValue();
-    assertEquals(10, value);
+    int retrievedValue = currentNode.getValue();
+    assertEquals(value, retrievedValue);
   }
 
   @Test
   public void testGetNextNode_retrievesCorrectNextNode() {
-    currentNode = new Node(10);
-    assertEquals(null, currentNode.getNextNode());
+    Node retrievedNextNode = currentNode.getNextNode();
+    assertEquals(null, retrievedNextNode);
   }
 
   @Test
   public void testSetNextNode() {
-    currentNode = new Node(10);
-    nextNode = new Node(20);
+    Node nextNode = new Node(20);
 
     currentNode.setNextNode(nextNode);
 
