@@ -25,4 +25,14 @@ public class NodeTest {
     assertEquals(null, currentNode.getNextNode());
   }
 
+  @Test
+  public void testSetNextNode() {
+    currentNode = new Node(10);
+    nextNode = new Node(20);
+
+    currentNode.setNextNode(nextNode);
+
+    assertEquals(nextNode, currentNode.getNextNode());
+  }
+
 }
