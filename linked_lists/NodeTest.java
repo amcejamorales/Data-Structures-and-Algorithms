@@ -19,4 +19,10 @@ public class NodeTest {
     assertEquals(10, value);
   }
 
+  @Test
+  public void testGetNextNode_retrievesCorrectNextNode() {
+    currentNode = new Node(10);
+    assertEquals(null, currentNode.getNextNode());
+  }
+
 }
