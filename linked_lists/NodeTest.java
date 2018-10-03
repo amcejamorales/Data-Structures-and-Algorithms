@@ -12,4 +12,11 @@ public class NodeTest {
     assertNotNull(currentNode);
   }
 
+  @Test
+  public void testGetValue_retrievesCorrectValue() {
+    currentNode = new Node(10);
+    int value = currentNode.getValue();
+    assertEquals(10, value);
+  }
+
 }
