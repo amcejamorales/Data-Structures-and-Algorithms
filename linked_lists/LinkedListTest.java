@@ -16,9 +16,9 @@ public class LinkedListTest {
   }
 
   @Test
-  public void testLInkedListClass_isInstantiatedWithNullHeadNode() {
+  public void testLinkedListClass_isInstantiatedWithNullHeadNode() {
     Node headNode = list.getHead();
     assertEquals(null, headNode);
   }
-
+  
 }
