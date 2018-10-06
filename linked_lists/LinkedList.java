@@ -17,4 +17,10 @@ public class LinkedList {
     head = headNode;
   }
 
+  public void insert(int value) {
+    Node newNode = new Node(value);
+    newNode.setNextNode(head);
+    head = newNode;
+  }
+
 }
