@@ -10,4 +10,15 @@ public class StackTest {
     stack = new Stack();
   }
 
+  @Test
+  public void testStackClass_canBeInstantiated() {
+    assertNotNull(stack);
+  }
+
+  @Test
+  public void testStackClass_isInstantiatedWithNullTopNode() {
+    Node top = stack.top();
+    assertEquals(null, top);
+  }
+
 }

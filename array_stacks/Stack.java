@@ -1,5 +1,9 @@
-public class Node {
+public class Stack {
 
-  public Node () {}
+  public Stack () {}
+
+  public Node top() {
+    return null;
+  }
 
 }
