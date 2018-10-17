@@ -8,7 +8,10 @@ public class Stack {
   }
 
   public Node top() {
-    return null;
+    if (insertAt == 0) {
+      return null;
+    }
+    return array[insertAt - 1];
   }
 
   public void push(Node node) {
