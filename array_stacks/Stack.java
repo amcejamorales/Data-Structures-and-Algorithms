@@ -13,10 +13,15 @@ public class Stack {
 
   public void push(Node node) {
     array[insertAt] = node;
+    insertAt++;
   }
 
   public boolean empty() {
     return array[0] == null;
+  }
+
+  public int size() {
+    return insertAt;
   }
 
 }
