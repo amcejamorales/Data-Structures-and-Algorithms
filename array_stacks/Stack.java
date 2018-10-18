@@ -42,4 +42,19 @@ public class Stack {
     return min;
   }
 
+  public Integer max() {
+    if (insertAt == 0) {
+      return null;
+    }
+    int max = array[0].getValue();
+    int currentIndex = 0;
+    while (currentIndex < insertAt) {
+      if (array[currentIndex].getValue() > max) {
+        max = array[currentIndex].getValue();
+      }
+      currentIndex += 1;
+    }
+    return max;
+  }
+
 }
