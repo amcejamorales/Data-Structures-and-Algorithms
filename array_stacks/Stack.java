@@ -27,4 +27,19 @@ public class Stack {
     return insertAt;
   }
 
+  public Integer min() {
+    if (insertAt == 0) {
+      return null;
+    }
+    int min = array[0].getValue();
+    int currentIndex = 0;
+    while (currentIndex < insertAt) {
+      if (array[currentIndex].getValue() < min) {
+        min = array[currentIndex].getValue();
+      }
+      currentIndex += 1;
+    }
+    return min;
+  }
+
 }
