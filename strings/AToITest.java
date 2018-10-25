@@ -58,4 +58,13 @@ public class AToITest {
     assertEquals(null, output_1a_two);
   }
 
+  @Test
+  public void testAToI_returnsNegativeInteger_givenNegativeNumberString() {
+    Integer neg_output_one = aToI.convertAlternative("-123");
+    Integer neg_output_two = aToI.convert("-123");
+    Integer expected_output  = -123;
+    assertEquals(expected_output, neg_output_one);
+    assertEquals(expected_output, neg_output_two); 
+  }
+
 }

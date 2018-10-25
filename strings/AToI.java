@@ -14,6 +14,7 @@ public class AToI {
       put("7", 7);
       put("8", 8);
       put("9", 9);
+      put("-", -1);
     }
   };
 
@@ -23,9 +24,14 @@ public class AToI {
     if (input == "") {
       return null;
     }
-
+    int sign = 1;
     int output = 0;
     int index = 0;
+
+    if (input.charAt(0) == '-') {
+      sign *= -1;
+      index += 1;
+    }
 
     while (index < input.length()) {
       int digit = input.charAt(index) - '0';
@@ -37,31 +43,39 @@ public class AToI {
       index += 1;
     }
 
-    return output;
+    return sign * output;
   }
 
   public Integer convertAlternative(String input) {
     int charPosition = input.length() - 1;
+
     if (charPosition == -1) {
       return null;
     }
 
+    int sign = 1;
     int multiplier = 1;
     Integer output = 0;
 
     while (charPosition >= 0) {
       String charValue = Character.toString(input.charAt(charPosition));
-      Integer numValue = conversionValues.get(charValue);
-      if (numValue != null) {
-        output += numValue * multiplier;
-      } else {
+      Integer value = conversionValues.get(charValue);
+
+      if (value == null) {
         return null;
       }
-      charPosition -= 1;
+
+      if (value >= 0) {
+        output += value * multiplier;
+      } else {
+        sign *= -1;
+      }
+
       multiplier *= 10;
+      charPosition -= 1;
     }
 
-    return output;
+    return sign * output;
   }
 
 }
