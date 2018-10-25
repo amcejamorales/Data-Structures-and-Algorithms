@@ -6,4 +6,4 @@
 1. Given a string, determine whether it is a palindrome (a palindrome is spelled the same way forwards and backwards)
 1. Given two strings, determine whether they're anagrams of each other. Anagrams contain the same characters, but the characters are in a different order. Example: "replays" and "parsley" are anagrams of each other.
 1. Given a string, return the first non-duplicated character.
-1. Given a string "aaabbcddd" compress it to “3a2b1c3d” in place. 
+1. Given a string "aaabbcddd" compress it to “3a2bc3d” in place. 
