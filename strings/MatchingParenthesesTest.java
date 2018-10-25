@@ -12,51 +12,63 @@ public class MatchingParenthesesTest {
 
   @Test
   public void testMatch_returnsFalseForSingleParen() {
-    boolean output_one = matchingParens.match("(");
-    boolean output_two = matchingParens.match(")");
+    Boolean output_one = matchingParens.match("(");
+    Boolean output_two = matchingParens.match(")");
     assertEquals(false, output_one);
     assertEquals(false, output_two);
   }
 
   @Test
   public void testMatch_returnsFalseForMismatchedParenPair() {
-    boolean output = matchingParens.match(")(");
+    Boolean output = matchingParens.match(")(");
     assertEquals(false, output);
   }
 
   @Test
   public void testMatch_returnsFalseForOddNumberOfParens() {
-    boolean output = matchingParens.match("()(");
+    Boolean output = matchingParens.match("()(");
     assertEquals(false, output);
   }
 
   @Test
   public void testMatch_returnsFalseForLongSequenceOfMisMatchedParens() {
-    boolean output = matchingParens.match("()((()()))))");
+    Boolean output = matchingParens.match("()((()()))))");
     assertEquals(false, output);
   }
 
   @Test
   public void testMatch_returnsTrueForMatchedParenPair() {
-    boolean output = matchingParens.match("()");
+    Boolean output = matchingParens.match("()");
     assertEquals(true, output);
   }
 
   @Test
   public void testMatch_returnsTrueForLongSequenceOfMatchingParens() {
-    boolean output = matchingParens.match("()(((()()))())");
+    Boolean output = matchingParens.match("()(((()()))())");
     assertEquals(true, output);
   }
 
   @Test
+  public void testMatch_returnsNull_givenEmptyString() {
+    Boolean output = matchingParens.match("");
+    assertEquals(null, output);
+  }
+
+  @Test
+  public void testMatch_returnsNull_givenStringNotContaining() {
+    Boolean output = matchingParens.match("hello world");
+    assertEquals(null, output);
+  }
+
+  @Test
   public void testMatch_returnsTrueForMatchingParens_ignoresOtherCharacters() {
-    boolean output = matchingParens.match("(hello) (&( ((world)('(^)'):);)(#)%) ");
+    Boolean output = matchingParens.match("(hello) (&( ((world)('(^)'):);)(#)%) ");
     assertEquals(true, output);
   }
 
   @Test
   public void testMatch_returnsFalseForMisMatchedParens_ignoresOtherCharacters() {
-    boolean output = matchingParens.match("(:)>( ((hi) ( :)&)*) )*)   ");
+    Boolean output = matchingParens.match("(:)>( ((hi) ( :)&)*) )*)   ");
     assertEquals(false, output);
   }
 

@@ -2,24 +2,31 @@ public class MatchingParentheses {
 
   public MatchingParentheses() {}
 
-  public boolean match(String input) {
-    int balanceCounter = 0;
+  public Boolean match(String input) {
+    int balanceCount = 0;
+    int parensCount = 0;
     int index = 0;
 
     while (index < input.length()) {
       char paren = input.charAt(index);
       if (paren == '(') {
-        balanceCounter += 1;
+        balanceCount += 1;
+        parensCount += 1;
       } else if (paren == ')') {
-        balanceCounter -= 1;
+        balanceCount -= 1;
+        parensCount += 1;
       }
-      if (balanceCounter < 0) {
+      if (balanceCount < 0) {
         return false;
       }
       index += 1;
     }
 
-    return balanceCounter == 0;
+    if (parensCount == 0) {
+        return null;
+    }
+
+    return balanceCount == 0;
   }
 
 }
