@@ -20,6 +20,27 @@ public class AToI {
   public AToI() {}
 
   public Integer convert(String input) {
+    if (input == "") {
+      return null;
+    }
+
+    int output = 0;
+    int index = 0;
+
+    while (index < input.length()) {
+      int digit = input.charAt(index) - '0';
+      if (digit <= 9) {
+        output = output * 10 + digit;
+      } else {
+        return null;
+      }
+      index += 1;
+    }
+
+    return output;
+  }
+
+  public Integer convertAlternative(String input) {
     int charPosition = input.length() - 1;
     if (charPosition == -1) {
       return null;

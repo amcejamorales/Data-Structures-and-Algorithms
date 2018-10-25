@@ -12,36 +12,50 @@ public class AToITest {
 
   @Test
   public void testAToI_returnsNullForEmptyString() {
-    Integer output = aToI.convert("");
-    assertEquals(null, output);
+    Integer output_one = aToI.convertAlternative("");
+    Integer output_two = aToI.convert("");
+    assertEquals(null, output_one);
+    assertEquals(null, output_two);
   }
 
   @Test
   public void testAToI_returnsIntegerValue1_givenStringValue1() {
-    Integer output = aToI.convert("1");
-    assertEquals((Integer) 1, output);
+    Integer output_one = aToI.convertAlternative("1");
+    Integer output_two = aToI.convert("1");
+    assertEquals((Integer) 1, output_one);
+    assertEquals((Integer) 1, output_two);
   }
 
   @Test
   public void testAToI_returnsIntegerValue12_givenStringValue12() {
-    Integer output = aToI.convert("12");
-    assertEquals((Integer) 12, output);
+    Integer output_one = aToI.convertAlternative("12");
+    Integer output_two = aToI.convert("12");
+    assertEquals((Integer) 12, output_one);
+    assertEquals((Integer) 12, output_two);
   }
 
   @Test
   public void testAToI_returnsIntegerValue123_givenStringValue123() {
-    Integer output = aToI.convert("123");
-    assertEquals((Integer) 123, output);
+    Integer output_one = aToI.convertAlternative("123");
+    Integer output_two = aToI.convert("123");
+    assertEquals((Integer) 123, output_one);
+    assertEquals((Integer) 123, output_two);
   }
 
   @Test
   public void testAToI_returnsNull_givenStringWithLetters() {
-    Integer output_a = aToI.convert("a");
-    Integer output_a1 = aToI.convert("a1");
-    Integer output_1a = aToI.convert("1a");
-    assertEquals(null, output_a);
-    assertEquals(null, output_a1);
-    assertEquals(null, output_1a);
+    Integer output_a_one = aToI.convertAlternative("a");
+    Integer output_a1_one = aToI.convertAlternative("a1");
+    Integer output_1a_one = aToI.convertAlternative("1a");
+    Integer output_a_two = aToI.convert("a");
+    Integer output_a1_two = aToI.convert("a1");
+    Integer output_1a_two = aToI.convert("1a");
+    assertEquals(null, output_a_one);
+    assertEquals(null, output_a1_one);
+    assertEquals(null, output_1a_one);
+    assertEquals(null, output_a_two);
+    assertEquals(null, output_a1_two);
+    assertEquals(null, output_1a_two);
   }
 
 }
