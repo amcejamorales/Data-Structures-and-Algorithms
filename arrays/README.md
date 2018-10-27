@@ -1,6 +1,6 @@
 ### Array Algorithms
 
-1. Given two sorted array of unique integers, return their intersection. Examples: ([1, 2, 3], [3, 4, 5]) => [3], ([1, 2, 3], [4, 5, 6, 7]) => [].
+1. Given two sorted arrays of unique integers, return their intersection. Examples: ([1, 2, 3], [3, 4, 5]) => [3], ([1, 2, 3], [4, 5, 6, 7]) => [].
 1. Given a string of numbers, convert it into an array of numbers.
 1. Given an array of integers and an integer, k, return an array of all sums in the array of k-consecutive integers. Example: ([1, 2, 3, 4, 5, 6], 3) => [6, 9, 12, 15]
 1. Given an array of numbers and a target number, determine whether there are two numbers in the array that add up to the target number.
